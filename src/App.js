@@ -1,32 +1,33 @@
 import React from 'react';
 import {BrowserRouter, NavLink, Route, Switch} from "react-router-dom";
-// import {createStore} from "redux";
-// import {Provider} from "react-redux";
+import {createStore} from "redux";
+import Provider from "react-redux/lib/components/Provider";
+
 
 //reducers
-// import {todo} from "./redux/ToDo/ToDoReducer";
+import {todo} from "./redux/Todos/reducer";
 
 //components
-import {CreateNewTask} from "./pages/CreateNewTask";
+import {NewToDo} from "./pages/NewToDo/NewToDo";
 import {TodoList} from "./pages/TodoList";
 
-//
-// export const store = createStore(
-//     todo,
-// );
 
-const App = () => {
+export const store = createStore(
+    todo,
+);
+
+export const App = () => {
     return (
-        <BrowserRouter>
-            {/*<Provider store={store}>*/}
+        <Provider store={store}>
+            <BrowserRouter>
                 <NavLink to={"/"}>ToDo list.</NavLink>
                 <NavLink to={"/createTodo"}>Create new task.</NavLink>
                 <Switch>
                     <Route exact path={"/"} component={TodoList}/>)}/>
-                    <Route exact path={"/createTodo"} render={(props) => (<CreateNewTask props={props}/>)}/>
+                    <Route exact path={"/createTodo"} render={() => (<NewToDo/>)}/>
                 </Switch>
-            {/*</Provider>*/}
-        </BrowserRouter>
+            </BrowserRouter>
+        </Provider>
     );
 };
 
