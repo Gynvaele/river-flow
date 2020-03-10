@@ -5,7 +5,12 @@
     "node": true,
     "jest": true
   },
-  "extends": ["plugin:react/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
