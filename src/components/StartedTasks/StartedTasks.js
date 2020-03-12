@@ -1,10 +1,8 @@
 import connect from "react-redux/lib/connect/connect";
 import React from "react";
-import {deleteINWORKTask, removeToNewTodo} from "../../redux/Todos/action";
+import { deleteINWORKTask, removeToNewTodo } from "../../redux/Todos/action";
 
-const StartedTasks = ({todoInWork, dispatch}) => {
-
-
+const StartedTasks = ({ todoInWork, dispatch }) => {
   const DeleteInWorkTodo = i => {
     dispatch(deleteINWORKTask(i));
   };
@@ -13,7 +11,6 @@ const StartedTasks = ({todoInWork, dispatch}) => {
     dispatch(removeToNewTodo(elm));
     DeleteInWorkTodo(i);
   };
-
 
   return (
     <div>
@@ -36,4 +33,4 @@ const StartedTasks = ({todoInWork, dispatch}) => {
   );
 };
 
-export default connect(({todoInWork}) => ({todoInWork}))(StartedTasks);
+export default connect(({ todoInWork }) => ({ todoInWork }))(StartedTasks);

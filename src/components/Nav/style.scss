@@ -1,0 +1,25 @@
+#navigation {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 300px;
+  padding: 1rem;
+
+  .navButton {
+    width: 100%;
+    padding: 5px 0;
+    background-color: aqua;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    &.active {
+      background-color: silver;
+    }
+  }
+}
