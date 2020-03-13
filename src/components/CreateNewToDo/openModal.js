@@ -4,6 +4,9 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import CreateNewTodo from "./CreateNewTodo";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from "@material-ui/icons/Add";
+import { Tooltip } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -12,6 +15,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
   },
   paper: {
+    width: "50vw",
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
@@ -33,9 +37,11 @@ export const NewTaskModal = () => {
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button>
+      <Tooltip title={"Add new Task"}>
+        <Fab color="primary" aria-label="add" onClick={handleOpen}>
+          <AddIcon />
+        </Fab>
+      </Tooltip>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

@@ -8,7 +8,9 @@ export const TodoList = () => {
     <div>
       <TodoTasks />
       <StartedTasks />
-      <NewTaskModal />
+      <div>
+        <NewTaskModal />
+      </div>
     </div>
   );
 };
