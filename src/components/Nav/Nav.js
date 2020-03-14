@@ -18,11 +18,6 @@ export const Nav = () => {
             ToDo list.
           </NavLink>
         </Button>
-        <Button>
-          <NavLink exact to={"/createTodo"} className={"navButton"}>
-            Create new task.
-          </NavLink>
-        </Button>
       </ButtonGroup>
     </div>
   );

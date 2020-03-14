@@ -5,7 +5,6 @@ import Provider from "react-redux/lib/components/Provider";
 //reducers
 import { todo } from "./redux/Todos/reducer";
 //components
-import { NewToDo } from "./pages/NewToDo/NewToDo";
 import { TodoList } from "./pages/TodoList/TodoList";
 import { SingIn } from "./pages/SingIn/SingIn";
 import { Nav } from "./components/Nav/Nav";
@@ -20,7 +19,6 @@ export const App = () => {
         <Switch>
           <Route exact path={"/"} render={() => <SingIn />} />
           <Route exact path={"/todos"} component={TodoList} />
-          <Route exact path={"/createTodo"} render={() => <NewToDo />} />
         </Switch>
       </BrowserRouter>
     </Provider>
