@@ -7,7 +7,58 @@
   width: 100%;
   height: 100vh;
 
-  .container {
+  background-image: url("https://7themes.su/_ph/66/1490044.jpg?1582652777");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
+  .container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 18vh;
+
+    .singIn-input, .sign-button {
+      margin: 0 1rem;
+    }
+
+    .singIn-input {
+      label {
+        color: #bcc1de;
+      }
+
+      .MuiInputLabel-shrink {
+        color: #ffffff;
+        font-weight: 500;
+        transform: translate(0, -1px) scale(0.9);
+      }
+
+      .MuiInput-input {
+        color: #ffffff;
+        background-color: rgba(0, 111, 157, 0.25);
+      }
+
+      .MuiInput-underline:before {
+        border-bottom: 1px solid #ffffff;
+      }
+
+      .MuiInput-underline:after {
+        border-bottom: 1px solid #ffaed9;
+      }
+    }
+
+    .sign-button {
+      align-self: center;
+      width: 50%;
+      margin-top: 3%;
+
+      .MuiButton-label {
+        font-weight: bold;
+      }
+    }
   }
 }
