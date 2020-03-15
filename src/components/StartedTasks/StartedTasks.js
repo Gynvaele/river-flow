@@ -26,7 +26,7 @@ const StartedTasks = ({ startedTasks, dispatch }) => {
           </div>
           {startedTasks.map((elm, i) => {
             return (
-              <div key={"post" + i} className={"posts"}>
+              <div key={"post" + i} className={"posts"} draggable={true}>
                 <div className="container">
                   <div className="post-title">{elm.title}</div>
                   <div className="post-content">
