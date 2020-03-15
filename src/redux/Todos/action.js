@@ -15,21 +15,21 @@ export const CreateNewTask = post => {
 };
 
 export const DeleteNEWTask = i => {
-  const { newTodo } = store.getState();
-  newTodo.splice(i, 1);
+  const { todoTasks } = store.getState();
+  todoTasks.splice(i, 1);
   console.log(store.getState());
   return {
     type: DELETE_NEW_TODO,
-    data: newTodo,
+    data: todoTasks,
   };
 };
 
 export const deleteINWORKTask = i => {
-  const { todoInWork } = store.getState();
-  todoInWork.splice(i, 1);
+  const { startedTasks } = store.getState();
+  startedTasks.splice(i, 1);
   return {
     type: DELETE_INWORK_TODO,
-    data: todoInWork,
+    data: startedTasks,
   };
 };
 
@@ -40,7 +40,7 @@ export const moveToInWorkTodo = elm => {
   };
 };
 
-export const removeToNewTodo = elm => {
+export const removeTo_todoTasks = elm => {
   return {
     type: REMOVE_TO_NEW_TASKS,
     data: elm,

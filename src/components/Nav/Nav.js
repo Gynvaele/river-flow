@@ -15,7 +15,7 @@ export const Nav = () => {
         </Button>
         <Button>
           <NavLink exact to={"/todos"} className={"navButton"}>
-            ToDo list.
+            {"ToDo list."}
           </NavLink>
         </Button>
       </ButtonGroup>

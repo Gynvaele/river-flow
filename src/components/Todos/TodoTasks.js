@@ -2,7 +2,7 @@ import connect from "react-redux/lib/connect/connect";
 import React from "react";
 import { DeleteNEWTask, moveToInWorkTodo } from "../../redux/Todos/action";
 
-const TodoTasks = ({ newTodo, dispatch }) => {
+const TodoTasks = ({ todoTasks, dispatch }) => {
   const DeleteNewTodo = i => {
     dispatch(DeleteNEWTask(i));
   };
@@ -12,24 +12,34 @@ const TodoTasks = ({ newTodo, dispatch }) => {
   };
 
   return (
-    <div>
-      {newTodo.length === 0 && <h3>No new todos yet.</h3>}
-      {newTodo.length !== 0 && (
-        <ul>
-          <h3>New ToDos:</h3>
-          {newTodo.map((elm, i) => {
+    <div className={"tasks-col"}>
+      {todoTasks.length === 0 && (
+        <div className={"tasks"}>
+          <div className="title">No new todos yet.</div>
+        </div>
+      )}
+      {todoTasks.length !== 0 && (
+        <div className="tasks">
+          <div className={"title"}>New ToDos ({todoTasks.length}):</div>
+          {todoTasks.map((elm, i) => {
             return (
-              <li key={"post" + i}>
-                {elm.title}
-                <button onClick={() => PinnedToWork(elm, i)}>InWork</button>
-                <button onClick={() => DeleteNewTodo(i)}>Delete todo</button>
-              </li>
+              <div key={"post" + i} className={"posts"}>
+                <div className="container">
+                  <div className="post-title">{elm.title}</div>
+                  <div className="post-content">
+                    <h4>{elm.description}</h4>
+                    <p>{elm.fullText}</p>
+                  </div>
+                  <button onClick={() => PinnedToWork(elm, i)}>InWork</button>
+                  <button onClick={() => DeleteNewTodo(i)}>Delete {"todo"}</button>
+                </div>
+              </div>
             );
           })}
-        </ul>
+        </div>
       )}
     </div>
   );
 };
 
-export default connect(({ newTodo }) => ({ newTodo }))(TodoTasks);
+export default connect(({ todoTasks }) => ({ todoTasks }))(TodoTasks);

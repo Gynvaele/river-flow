@@ -19,7 +19,7 @@ export const App = () => {
         <Switch>
           <Route exact path={"/"} render={() => <SingIn />} />
           <Route exact path={"/todos"} component={TodoList} />
-        </Switch>
+        </Switch>{" "}
       </BrowserRouter>
     </Provider>
   );
