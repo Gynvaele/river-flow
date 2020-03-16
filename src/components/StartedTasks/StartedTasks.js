@@ -1,6 +1,8 @@
 import connect from "react-redux/lib/connect/connect";
 import React from "react";
 import { deleteINWORKTask, removeTo_todoTasks } from "../../redux/Todos/action";
+import { DropBox } from "../DrugAndDrop/DropBox/DropBox";
+import { Post } from "../DrugAndDrop/Post/Post";
 
 const StartedTasks = ({ startedTasks, dispatch }) => {
   const DeleteInWorkTodo = i => {
@@ -13,7 +15,7 @@ const StartedTasks = ({ startedTasks, dispatch }) => {
   };
 
   return (
-    <div className={"tasks-col"}>
+    <DropBox className={"tasks-col"} id={"startedTasks"}>
       {startedTasks.length === 0 && (
         <div className={"tasks"}>
           <div className="title">No todos in work yet.</div>
@@ -26,7 +28,7 @@ const StartedTasks = ({ startedTasks, dispatch }) => {
           </div>
           {startedTasks.map((elm, i) => {
             return (
-              <div key={"post" + i} className={"posts"} draggable={true}>
+              <Post key={"post" + i} className={"posts"} draggable={true}>
                 <div className="container">
                   <div className="post-title">{elm.title}</div>
                   <div className="post-content">
@@ -36,12 +38,12 @@ const StartedTasks = ({ startedTasks, dispatch }) => {
                   <button onClick={() => RemoveToNew(elm, i)}>Remove to New</button>
                   <button onClick={() => DeleteInWorkTodo(i)}>Delete {"todo"}</button>
                 </div>
-              </div>
+              </Post>
             );
           })}
         </div>
       )}
-    </div>
+    </DropBox>
   );
 };
 

@@ -1,6 +1,8 @@
 import connect from "react-redux/lib/connect/connect";
 import React from "react";
 import { DeleteNEWTask, moveToInWorkTodo } from "../../redux/Todos/action";
+import { Post } from "../DrugAndDrop/Post/Post";
+import { DropBox } from "../DrugAndDrop/DropBox/DropBox";
 
 const TodoTasks = ({ todoTasks, dispatch }) => {
   const DeleteNewTodo = i => {
@@ -11,30 +13,8 @@ const TodoTasks = ({ todoTasks, dispatch }) => {
     DeleteNewTodo(i);
   };
 
-  const DrugAndDrop = (event, i) => {
-    console.log(event);
-    console.log(i);
-    let postId = document.getElementById("post" + i);
-    let startCursorX;
-    let startCursorY;
-    let startX;
-    let startY;
-
-    postId.addEventListener("dragstart", function() {
-      startCursorX = event.pageX;
-      startCursorY = event.pageY;
-      startX = postId.style.marginLeft.replace("px", "") * 1;
-      startY = postId.style.marginTop.replace("px", "") * 1;
-    });
-    postId.addEventListener("dragend", function() {
-      postId.style.position = "absolute";
-      postId.style.marginLeft = startX + event.pageX - startCursorX; //позиция элемента + позиция курсора - позиция курсоа в начале перетаскивания
-      postId.style.marginTop = startY + event.pageY - startCursorY; // Так же как и в предыдущем случае, только по другой оси
-    });
-  };
-
   return (
-    <div className={"tasks-col"}>
+    <DropBox id={"todoTasks"} className={"tasks-col"}>
       {todoTasks.length === 0 && (
         <div className={"tasks"}>
           <div className="title">No new todos yet.</div>
@@ -45,13 +25,7 @@ const TodoTasks = ({ todoTasks, dispatch }) => {
           <div className={"title"}>New ToDos ({todoTasks.length}):</div>
           {todoTasks.map((elm, i) => {
             return (
-              <div
-                key={"post" + i}
-                id={"post" + i}
-                className={"posts"}
-                draggable={true}
-                onMouseDown={event => DrugAndDrop(event, i)}
-              >
+              <Post key={"post" + i} id={"todo" + i} className={"posts"} draggable={true} PinnedToWork={PinnedToWork}>
                 <div className="container">
                   <div className="post-title">{elm.title}</div>
                   <div className="post-content">
@@ -61,12 +35,12 @@ const TodoTasks = ({ todoTasks, dispatch }) => {
                   <button onClick={() => PinnedToWork(elm, i)}>InWork</button>
                   <button onClick={() => DeleteNewTodo(i)}>Delete {"todo"}</button>
                 </div>
-              </div>
+              </Post>
             );
           })}
         </div>
       )}
-    </div>
+    </DropBox>
   );
 };
 
