@@ -1,4 +1,4 @@
-import { CREATE_NEW_TASK, DELETE_TASK, MOVE_TO_INWORK_TASKS, REMOVE_TO_NEW_TASKS } from "../types";
+import { CREATE_NEW_TASK, DELETE_TASK, MOVE_TO_INWORK_TASKS, MOVER, REMOVE_TO_NEW_TASKS } from "../types";
 
 import { defaultData } from "../../data_mocked/data";
 
@@ -15,6 +15,8 @@ export const todo = (state = initialState, action) => {
     case MOVE_TO_INWORK_TASKS:
       return { ...state, tasks: [...state.tasks, action.data] };
     case REMOVE_TO_NEW_TASKS:
+      return { ...state, tasks: [...state.tasks, action.data] };
+    case MOVER:
       return { ...state, tasks: [...state.tasks, action.data] };
     default:
       return state;

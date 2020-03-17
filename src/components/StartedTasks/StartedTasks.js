@@ -1,23 +1,22 @@
 import React from "react";
 import { DeleteTask, removeTo_todoTasks } from "../../redux/Todos/action";
-import { DropBox } from "../DrugAndDrop/DropBox/DropBox";
 import { Post } from "../DrugAndDrop/Post/Post";
+import { DropBox } from "../DrugAndDrop/DropBox/DropBox";
 import connect from "react-redux/lib/connect/connect";
 
 const StartedTasks = ({ tasks, dispatch }) => {
   const Delete = i => {
     dispatch(DeleteTask(i));
   };
-
   const RemoveToNew = (elm, i) => {
     dispatch(removeTo_todoTasks(elm));
     DeleteTask(i);
   };
 
-  const startedTasks = tasks.filter(tasks => tasks.flag === "started");
+  const startedTasks = tasks.filter(tasks => tasks.flag === "startedTasks");
 
   return (
-    <DropBox id={"todoTasks"} className={"tasks-col"}>
+    <DropBox id={"startedTasks"} className={"tasks-col"}>
       {startedTasks.length === 0 && (
         <div className={"tasks"}>
           <div className="title">You have no eny started tasks.</div>
@@ -28,7 +27,13 @@ const StartedTasks = ({ tasks, dispatch }) => {
           <div className={"title"}>New ToDos ({startedTasks.length}):</div>
           {startedTasks.map((elm, i) => {
             return (
-              <Post key={"post" + i} id={"todo" + i} className={"posts"} draggable={true} PinnedToWork={RemoveToNew}>
+              <Post
+                key={"post_" + elm.title + i}
+                id={elm.id}
+                className={"posts"}
+                draggable={true}
+                PinnedToWork={RemoveToNew}
+              >
                 <div className="container">
                   <div className="post-title">{elm.title}</div>
                   <div className="post-content">

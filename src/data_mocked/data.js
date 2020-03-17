@@ -1,50 +1,54 @@
 export const defaultData = [
   {
+    id: 1,
     contributor: "Pasha",
     title: "first",
     fullText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu odio quis ex congue aliquet non eu sapien. Duis commodo purus eget nibh pharetra, id efficitur ligula accumsan. Praesent dignissim eros vel elementum sagittis. Quisque elementum ligula nec lorem pellentesque, vitae tempus lacus semper. Morbi semper eu tellus vel dignissim. Cras mattis faucibus ante vitae ornare. Phasellus scelerisque non lectus sed posuere. Donec consectetur risus nec diam commodo, sit amet maximus libero ullamcorper.",
     description: "Pasha's first todo post.",
-    flag: "toDo",
+    flag: "todoTasks",
   },
   {
+    id: 2,
     contributor: "Pasha",
     title: "second",
     fullText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu odio quis ex congue aliquet non eu sapien. Duis commodo purus eget nibh pharetra, id efficitur ligula accumsan. Praesent dignissim eros vel elementum sagittis. Quisque elementum ligula nec lorem pellentesque, vitae tempus lacus semper. Morbi semper eu tellus vel dignissim. Cras mattis faucibus ante vitae ornare. Phasellus scelerisque non lectus sed posuere. Donec consectetur risus nec diam commodo, sit amet maximus libero ullamcorper.",
     description: "Pasha's second todo post.",
-    flag: "toDo",
+    flag: "todoTasks",
   },
   {
+    id: 3,
     contributor: "Sasha",
     title: "Sasha's",
     fullText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu odio quis ex congue aliquet non eu sapien. Duis commodo purus eget nibh pharetra, id efficitur ligula accumsan. Praesent dignissim eros vel elementum sagittis. Quisque elementum ligula nec lorem pellentesque, vitae tempus lacus semper. Morbi semper eu tellus vel dignissim. Cras mattis faucibus ante vitae ornare. Phasellus scelerisque non lectus sed posuere. Donec consectetur risus nec diam commodo, sit amet maximus libero ullamcorper.",
     description: "Sasha's first todo post.",
-    flag: "toDo",
+    flag: "todoTasks",
   },
   {
+    id: 4,
     contributor: "Pasha",
     title: "first",
-    fullText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu odio quis ex congue aliquet non eu sapien. Duis commodo purus eget nibh pharetra, id efficitur ligula accumsan. Praesent dignissim eros vel elementum sagittis. Quisque elementum ligula nec lorem pellentesque, vitae tempus lacus semper. Morbi semper eu tellus vel dignissim. Cras mattis faucibus ante vitae ornare. Phasellus scelerisque non lectus sed posuere. Donec consectetur risus nec diam commodo, sit amet maximus libero ullamcorper.",
-    description: "Pasha's first todo post.",
-    flag: "started",
+    fullText: "",
+    description: "Pasha's first started post.",
+    flag: "startedTasks",
   },
   {
+    id: 5,
     contributor: "Pasha",
     title: "second",
-    fullText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu odio quis ex congue aliquet non eu sapien. Duis commodo purus eget nibh pharetra, id efficitur ligula accumsan. Praesent dignissim eros vel elementum sagittis. Quisque elementum ligula nec lorem pellentesque, vitae tempus lacus semper. Morbi semper eu tellus vel dignissim. Cras mattis faucibus ante vitae ornare. Phasellus scelerisque non lectus sed posuere. Donec consectetur risus nec diam commodo, sit amet maximus libero ullamcorper.",
+    fullText: "",
     description: "Pasha's second todo post.",
-    flag: "started",
+    flag: "startedTasks",
   },
   {
+    id: 6,
     contributor: "Sasha",
     title: "Sasha's",
     fullText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu odio quis ex congue aliquet non eu sapien. Duis commodo purus eget nibh pharetra, id efficitur ligula accumsan. Praesent dignissim eros vel elementum sagittis. Quisque elementum ligula nec lorem pellentesque, vitae tempus lacus semper. Morbi semper eu tellus vel dignissim. Cras mattis faucibus ante vitae ornare. Phasellus scelerisque non lectus sed posuere. Donec consectetur risus nec diam commodo, sit amet maximus libero ullamcorper.",
     description: "Sasha's first todo post.",
-    flag: "started",
+    flag: "startedTasks",
   },
 ];

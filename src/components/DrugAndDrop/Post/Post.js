@@ -17,7 +17,6 @@ export const Post = props => {
 
   return (
     <div
-      key={props.key}
       id={props.id}
       className={props.className}
       draggable={props.draggable}
