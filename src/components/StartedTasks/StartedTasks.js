@@ -1,42 +1,39 @@
 import connect from "react-redux/lib/connect/connect";
 import React from "react";
-import { deleteINWORKTask, removeTo_todoTasks } from "../../redux/Todos/action";
+import { DeleteTask, removeTo_todoTasks } from "../../redux/Todos/action";
 import { DropBox } from "../DrugAndDrop/DropBox/DropBox";
 import { Post } from "../DrugAndDrop/Post/Post";
 
-const StartedTasks = ({ startedTasks, dispatch }) => {
-  const DeleteInWorkTodo = i => {
-    dispatch(deleteINWORKTask(i));
+const StartedTasks = ({ tasks, dispatch }) => {
+  const Delete = i => {
+    dispatch(DeleteTask(i));
   };
 
   const RemoveToNew = (elm, i) => {
     dispatch(removeTo_todoTasks(elm));
-    DeleteInWorkTodo(i);
+    DeleteTask(i);
   };
 
   return (
-    <DropBox className={"tasks-col"} id={"startedTasks"}>
-      {startedTasks.length === 0 && (
+    <DropBox id={"todoTasks"} className={"tasks-col"}>
+      {tasks.filter(flag => flag === "started").length === 0 ? (
         <div className={"tasks"}>
-          <div className="title">No todos in work yet.</div>
+          <div className="title">You have no eny started tasks.</div>
         </div>
-      )}
-      {startedTasks.length !== 0 && (
+      ) : (
         <div className="tasks">
-          <div className={"title"}>
-            {"ToDo"} in work ({startedTasks.length}):
-          </div>
-          {startedTasks.map((elm, i) => {
+          <div className={"title"}>New ToDos ({tasks.length}):</div>
+          {tasks.map((elm, i) => {
             return (
-              <Post key={"post" + i} className={"posts"} draggable={true}>
+              <Post key={"post" + i} id={"todo" + i} className={"posts"} draggable={true} PinnedToWork={RemoveToNew}>
                 <div className="container">
                   <div className="post-title">{elm.title}</div>
                   <div className="post-content">
                     <h4>{elm.description}</h4>
                     <p>{elm.fullText}</p>
                   </div>
-                  <button onClick={() => RemoveToNew(elm, i)}>Remove to New</button>
-                  <button onClick={() => DeleteInWorkTodo(i)}>Delete {"todo"}</button>
+                  <button onClick={() => RemoveToNew(elm, i)}>InWork</button>
+                  <button onClick={() => Delete(i)}>Delete {"todo"}</button>
                 </div>
               </Post>
             );
@@ -47,4 +44,4 @@ const StartedTasks = ({ startedTasks, dispatch }) => {
   );
 };
 
-export default connect(({ startedTasks }) => ({ startedTasks }))(StartedTasks);
+export default connect(({ tasks }) => ({ tasks }))(StartedTasks);

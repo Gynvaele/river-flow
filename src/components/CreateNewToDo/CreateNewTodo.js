@@ -32,6 +32,7 @@ const CreateNewTodo = ({ dispatch }) => {
         fullText: fullText,
         description: description,
         contributor: contributor,
+        flag: "toDo",
       };
 
       dispatch(CreateNewTask(post));
