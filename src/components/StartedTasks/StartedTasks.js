@@ -1,8 +1,8 @@
-import connect from "react-redux/lib/connect/connect";
 import React from "react";
 import { DeleteTask, removeTo_todoTasks } from "../../redux/Todos/action";
 import { DropBox } from "../DrugAndDrop/DropBox/DropBox";
 import { Post } from "../DrugAndDrop/Post/Post";
+import connect from "react-redux/lib/connect/connect";
 
 const StartedTasks = ({ tasks, dispatch }) => {
   const Delete = i => {
@@ -14,16 +14,19 @@ const StartedTasks = ({ tasks, dispatch }) => {
     DeleteTask(i);
   };
 
+  const startedTasks = tasks.filter(tasks => tasks.flag === "started");
+
   return (
     <DropBox id={"todoTasks"} className={"tasks-col"}>
-      {tasks.filter(flag => flag === "started").length === 0 ? (
+      {startedTasks.length === 0 && (
         <div className={"tasks"}>
           <div className="title">You have no eny started tasks.</div>
         </div>
-      ) : (
+      )}
+      {startedTasks.length !== 0 && (
         <div className="tasks">
-          <div className={"title"}>New ToDos ({tasks.length}):</div>
-          {tasks.map((elm, i) => {
+          <div className={"title"}>New ToDos ({startedTasks.length}):</div>
+          {startedTasks.map((elm, i) => {
             return (
               <Post key={"post" + i} id={"todo" + i} className={"posts"} draggable={true} PinnedToWork={RemoveToNew}>
                 <div className="container">

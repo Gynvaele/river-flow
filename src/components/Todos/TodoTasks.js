@@ -13,16 +13,19 @@ const TodoTasks = ({ tasks, dispatch }) => {
     DeleteTask(i);
   };
 
+  const toDoTasks = tasks.filter(tasks => tasks.flag === "started");
+
   return (
     <DropBox id={"todoTasks"} className={"tasks-col"}>
-      {tasks.filter(flag => flag === "toDo") === true ? (
+      {toDoTasks.length === 0 && (
         <div className={"tasks"}>
-          <div className="title">No new todos yet.</div>
+          <div className="title">You have no eny started tasks.</div>
         </div>
-      ) : (
+      )}
+      {toDoTasks.length !== 0 && (
         <div className="tasks">
-          <div className={"title"}>New ToDos ({tasks.length}):</div>
-          {tasks.map((elm, i) => {
+          <div className={"title"}>New ToDos ({toDoTasks.length}):</div>
+          {toDoTasks.map((elm, i) => {
             return (
               <Post key={"post" + i} id={"todo" + i} className={"posts"} draggable={true} PinnedToWork={PinnedToWork}>
                 <div className="container">
