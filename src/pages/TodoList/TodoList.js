@@ -1,6 +1,5 @@
 import React from "react";
-import TodoTasks from "../../components/Todos/TodoTasks";
-import StartedTasks from "../../components/StartedTasks/StartedTasks";
+import Task from "../../components/Todos/TodoTasks";
 import { NewTaskModal } from "../../components/CreateNewToDo/openModal";
 import "./style.scss";
 
@@ -8,8 +7,8 @@ export const TodoList = () => {
   return (
     <div>
       <div className={"tasks-container"}>
-        <TodoTasks />
-        <StartedTasks />
+        <Task currentBox={"todoTasks"} />
+        <Task currentBox={"startedTasks"} />
         <div className="tasks-col">
           <div className="tasks">
             <div className={"title"}>Done</div>

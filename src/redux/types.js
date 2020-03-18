@@ -1,7 +1,3 @@
 export const CREATE_NEW_TASK = "CREATE_NEW_TASK";
 export const DELETE_TASK = "DELETE_TASK";
-
-export const MOVE_TO_INWORK_TASKS = "MOVE_TO_INWORK_TASKS";
-export const REMOVE_TO_NEW_TASKS = "REMOVE_TO_NEW_TASKS";
-
 export const MOVER = "MOVER";

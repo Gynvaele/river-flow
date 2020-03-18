@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const CreateNewTodo = ({ dispatch }) => {
+const CreateNewTodo = ({ tasks, dispatch }) => {
   const classes = useStyles();
   const [title, setTitle] = useState("");
   const [fullText, setFullText] = useState("");
@@ -28,19 +28,21 @@ const CreateNewTodo = ({ dispatch }) => {
     event.preventDefault();
     if (title.length > 3 || fullText.length > 3) {
       const post = {
+        id: ++tasks.length,
+        contributor: contributor,
         title: title,
         fullText: fullText,
         description: description,
-        contributor: contributor,
-        flag: "toDo",
+        flag: "todoTasks",
       };
 
       dispatch(CreateNewTask(post));
-
+      // dispatch(asyncCreate(post));
       setTitle("");
       setFullText("");
       setDescription("");
       console.log(post);
+      console.log(tasks);
     }
   };
 
@@ -89,4 +91,4 @@ const CreateNewTodo = ({ dispatch }) => {
   );
 };
 
-export default connect(() => ({}))(CreateNewTodo);
+export default connect(({ tasks }) => ({ tasks }))(CreateNewTodo);

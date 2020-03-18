@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
+import thunk from "redux-thunk";
 import Provider from "react-redux/lib/components/Provider";
 //reducers
 import { todo } from "./redux/Todos/reducer";
@@ -9,7 +10,7 @@ import { TodoList } from "./pages/TodoList/TodoList";
 import { SingIn } from "./pages/SingIn/SingIn";
 import { Nav } from "./components/Nav/Nav";
 
-export const store = createStore(todo);
+export const store = createStore(todo, applyMiddleware(thunk));
 
 export const App = () => {
   return (
