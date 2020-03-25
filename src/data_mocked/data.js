@@ -1,6 +1,6 @@
 export const defaultData = [
   {
-    id: 1,
+    id: "_1",
     contributor: "Pasha",
     title: "first",
     fullText:
@@ -9,7 +9,7 @@ export const defaultData = [
     flag: "todoTasks",
   },
   {
-    id: 2,
+    id: "_2",
     contributor: "Pasha",
     title: "second",
     fullText:
@@ -18,7 +18,7 @@ export const defaultData = [
     flag: "todoTasks",
   },
   {
-    id: 3,
+    id: "_3",
     contributor: "Sasha",
     title: "Sasha's",
     fullText:
@@ -27,7 +27,7 @@ export const defaultData = [
     flag: "todoTasks",
   },
   {
-    id: 4,
+    id: "_4",
     contributor: "Pasha",
     title: "first",
     fullText: "",
@@ -35,7 +35,7 @@ export const defaultData = [
     flag: "startedTasks",
   },
   {
-    id: 5,
+    id: "_5",
     contributor: "Pasha",
     title: "second",
     fullText: "",
@@ -43,7 +43,7 @@ export const defaultData = [
     flag: "startedTasks",
   },
   {
-    id: 6,
+    id: "_6",
     contributor: "Sasha",
     title: "Sasha's",
     fullText:
