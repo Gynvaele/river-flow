@@ -9,16 +9,8 @@ export const TodoList = () => {
       <div className={"tasks-container"}>
         <Task currentBox={"todoTasks"} />
         <Task currentBox={"startedTasks"} />
-        <div className="tasks-col">
-          <div className="tasks">
-            <div className={"title"}>Done</div>
-          </div>
-        </div>
-        <div className="tasks-col">
-          <div className="tasks">
-            <div className={"title"}>Closed</div>
-          </div>
-        </div>
+        <Task currentBox={"Done"} />
+        <Task currentBox={"Closed"} />
       </div>
       <div className={"modalWindow-container"}>
         <NewTaskModal />

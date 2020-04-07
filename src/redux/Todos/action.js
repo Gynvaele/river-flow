@@ -8,18 +8,10 @@ export const CreateNewTask = post => {
     data: post,
   };
 };
-//
-// export const asyncCreate = post => {
-//   return dispatch => {
-//     setTimeout(() => {
-//       dispatch(CreateNewTask(post));
-//     }, 1000);
-//   };
-// };
 
 export const DeleteTask = id => {
   const { tasks } = store.getState();
-  console.log(id);
+  console.log(tasks);
   tasks.splice(id, 1);
   console.log(store.getState());
   return {

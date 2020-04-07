@@ -9,7 +9,7 @@ const initialState = {
 export const todo = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_NEW_TASK:
-      return { ...state, tasks: [...state.tasks, ...action.data] };
+      return { ...state, tasks: [...state.tasks, action.data] };
     case DELETE_TASK:
       return { ...state, tasks: [...action.data] };
     case MOVER:

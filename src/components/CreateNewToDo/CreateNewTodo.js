@@ -26,6 +26,7 @@ const CreateNewTodo = ({ tasks, dispatch }) => {
 
   const SubmitToDo = event => {
     event.preventDefault();
+    const defaultFlag = "todoTasks";
     if (title.length > 3 || fullText.length > 3) {
       const post = {
         id: ++tasks.length,
@@ -33,7 +34,7 @@ const CreateNewTodo = ({ tasks, dispatch }) => {
         title: title,
         fullText: fullText,
         description: description,
-        flag: "todoTasks",
+        flag: defaultFlag,
       };
 
       dispatch(CreateNewTask(post));
@@ -41,8 +42,8 @@ const CreateNewTodo = ({ tasks, dispatch }) => {
       setTitle("");
       setFullText("");
       setDescription("");
-      console.log(post);
-      console.log(tasks);
+      // console.log(post);
+      // console.log(tasks);
     }
   };
 

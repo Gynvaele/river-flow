@@ -6,7 +6,6 @@ import connect from "react-redux/lib/connect/connect";
 
 const Task = ({ tasks, dispatch, currentBox }) => {
   const Delete = id => {
-    console.log(id);
     dispatch(DeleteTask(id));
   };
 
