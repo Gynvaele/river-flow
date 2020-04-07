@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CreateNewTask } from "../../redux/Todos/action";
+import { CreateNewTask } from "../../redux/actions/todos";
 import connect from "react-redux/lib/connect/connect";
 import "./createStyle.scss";
 

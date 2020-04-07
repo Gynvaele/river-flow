@@ -1,5 +1,5 @@
 import React from "react";
-import { Mover } from "../../../redux/Todos/action";
+import { Mover } from "../../../redux/actions/todos";
 
 export const DropBox = props => {
   //Drug and Drop

@@ -1,5 +1,5 @@
 import React from "react";
-import { DeleteTask } from "../../redux/Todos/action";
+import { DeleteTask } from "../../redux/actions/todos";
 import { Post } from "../DrugAndDrop/Post/Post";
 import { DropBox } from "../DrugAndDrop/DropBox/DropBox";
 import connect from "react-redux/lib/connect/connect";

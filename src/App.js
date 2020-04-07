@@ -4,7 +4,7 @@ import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 import Provider from "react-redux/lib/components/Provider";
 //reducers
-import { todo } from "./redux/Todos/reducer";
+import { todo } from "./redux/reducers/todos";
 //components
 import { TodoList } from "./pages/TodoList/TodoList";
 import { SingIn } from "./pages/SingIn/SingIn";
