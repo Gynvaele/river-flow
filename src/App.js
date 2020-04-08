@@ -7,7 +7,7 @@ import Provider from "react-redux/lib/components/Provider";
 import { todo } from "./redux/reducers/todos";
 //components
 import { TodoList } from "./pages/TodoList/TodoList";
-import { SingIn } from "./pages/SingIn/SingIn";
+import SingIn from "./pages/SingIn/SingIn";
 import { Nav } from "./components/Nav/Nav";
 
 export const store = createStore(todo, applyMiddleware(thunk));

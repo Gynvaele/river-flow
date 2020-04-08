@@ -2,20 +2,24 @@ import React, { useState } from "react";
 import "./style.scss";
 import { TextField } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
+import { login } from "../../redux/actions/liginActions";
+import connect from "react-redux/lib/connect/connect";
 
-export const SingIn = () => {
-  const [login, setLogin] = useState("");
+const SingIn = ({ isAuth, dispatch }) => {
+  const [email, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
   const Login = event => {
     event.preventDefault();
 
     console.log("Улетели на сервер");
-    console.log("login: " + login);
+    console.log("login: " + email);
     console.log("password: " + password);
+    dispatch(login(email, password));
 
     setLogin("");
     setPassword("");
+    console.log(isAuth);
   };
   return (
     <div id="SignIn">
@@ -23,7 +27,7 @@ export const SingIn = () => {
         <TextField
           type="text"
           label={"Login:"}
-          value={login}
+          value={email}
           onChange={e => setLogin(e.target.value)}
           className={"singIn-input"}
         />
@@ -43,3 +47,5 @@ export const SingIn = () => {
     </div>
   );
 };
+
+export default connect(({ isAuth }) => ({ isAuth }))(SingIn);
