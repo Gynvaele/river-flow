@@ -2,7 +2,6 @@ import { CREATE_NEW_TASK, DELETE_TASK, MOVER } from "../types";
 import { store } from "../../App";
 
 export const CreateNewTask = post => {
-  console.log(post);
   return {
     type: CREATE_NEW_TASK,
     data: post,
@@ -11,10 +10,11 @@ export const CreateNewTask = post => {
 
 export const DeleteTask = id => {
   const { tasks } = store.getState();
-  console.log(id);
-  console.log(tasks);
-  tasks.splice(id, 1);
-  console.log(tasks);
+  const checkId = tasks => {
+    return tasks.id === id;
+  };
+  const count = tasks.findIndex(checkId);
+  tasks.splice(count, 1);
   return {
     type: DELETE_TASK,
     data: tasks,
