@@ -21,7 +21,6 @@ const CreateNewTodo = ({ tasks, dispatch }) => {
   const classes = useStyles();
   const [title, setTitle] = useState("");
   const [fullText, setFullText] = useState("");
-  const [description, setDescription] = useState("");
   const [contributor, setContributor] = useState("");
 
   const SubmitToDo = event => {
@@ -33,17 +32,12 @@ const CreateNewTodo = ({ tasks, dispatch }) => {
         contributor: contributor,
         title: title,
         fullText: fullText,
-        description: description,
         flag: defaultFlag,
       };
 
       dispatch(CreateNewTask(post));
-      // dispatch(asyncCreate(post));
       setTitle("");
       setFullText("");
-      setDescription("");
-      // console.log(post);
-      // console.log(tasks);
     }
   };
 
@@ -62,7 +56,6 @@ const CreateNewTodo = ({ tasks, dispatch }) => {
         type="text"
         onChange={e => setFullText(e.target.value)}
       />
-      <TextField label={"Description"} value={description} type="text" onChange={e => setDescription(e.target.value)} />
       <TextField select label="Contributor" value={contributor} onChange={handleChange}>
         <MenuItem value="">
           <em>None</em>

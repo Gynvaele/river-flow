@@ -11,9 +11,10 @@ export const CreateNewTask = post => {
 
 export const DeleteTask = id => {
   const { tasks } = store.getState();
+  console.log(id);
   console.log(tasks);
   tasks.splice(id, 1);
-  console.log(store.getState());
+  console.log(tasks);
   return {
     type: DELETE_TASK,
     data: tasks,
@@ -22,17 +23,13 @@ export const DeleteTask = id => {
 
 export const Mover = (box_id, card_id) => {
   const { tasks } = store.getState();
-  // const changed = tasks.filter(tasks => +tasks.id === +card_id);
-  // changed[0][flag] = box_id};
-  if (+tasks.id === +card_id) {
-    return (tasks.flag = box_id);
-  }
-  console.log(tasks);
-  console.log(box_id);
-  console.log(card_id);
-
+  const currentTask = tasks.filter(card => card.id === card_id);
+  console.log(currentTask[0].flag);
+  console.log("current task", currentTask[0].flag);
+  currentTask[0].flag = box_id;
+  console.log("current task", currentTask[0].flag);
   return {
     type: MOVER,
-    data: tasks,
+    data: [currentTask],
   };
 };
