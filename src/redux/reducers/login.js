@@ -1,11 +1,4 @@
-import {
-  // SET_AUTH,
-  START_LOGIN,
-  OBTAIN_LOGIN_DATA,
-  OBTAIN_LOGIN_ERROR,
-  // OBTAIN_FINISH_DATA,
-  // START_FINISH_REGISTER,
-} from "../types";
+import { OBTAIN_LOGIN_DATA, OBTAIN_LOGIN_ERROR, START_LOGIN } from "../actions";
 
 const initialState = {
   isLoading: false,
@@ -13,7 +6,7 @@ const initialState = {
   errors: [],
 };
 
-export default function loginApp(state = initialState, action) {
+export default function loginReducer(state = initialState, action) {
   switch (action.type) {
     case START_LOGIN:
       return {

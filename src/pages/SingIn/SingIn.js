@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.scss";
 import { TextField } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import { login } from "../../redux/actions/liginActions";
+import { login } from "../../redux/actions/loginActions";
 import connect from "react-redux/lib/connect/connect";
 
 const SingIn = ({ isAuth, dispatch }) => {

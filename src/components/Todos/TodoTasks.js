@@ -1,24 +1,24 @@
-import React from "react";
-import { DeleteTask } from "../../redux/actions/todos";
+import React, { useEffect } from "react";
+import { DeleteTask, obtainTasks } from "../../redux/actions";
 import { Post } from "../DrugAndDrop/Post/Post";
 import { DropBox } from "../DrugAndDrop/DropBox/DropBox";
-import connect from "react-redux/lib/connect/connect";
+import { useDispatch, useSelector } from "react-redux";
 
-const Task = ({ tasks, dispatch, currentBox }) => {
-  const Delete = id => {
+const TodoList = ({ currentBox, taskInBox }) => {
+  const dispatch = useDispatch();
+
+  function Delete(id) {
     dispatch(DeleteTask(id));
-  };
-
-  const taskInBox = tasks.filter(tasks => tasks.flag === currentBox);
+  }
 
   return (
     <DropBox id={currentBox} className={"tasks-col"}>
-      {taskInBox.length === 0 && (
+      {!taskInBox.length && (
         <div className={"tasks"}>
           <div className="title">You have no eny started tasks.</div>
         </div>
       )}
-      {taskInBox.length !== 0 && (
+      {taskInBox.length && (
         <div className="tasks">
           <div className={"title"}>New ToDos ({taskInBox.length}):</div>
           {taskInBox.map((elm, i) => {
@@ -46,4 +46,8 @@ const Task = ({ tasks, dispatch, currentBox }) => {
   );
 };
 
-export default connect(({ tasks }) => ({ tasks }))(Task);
+TodoList.defaultProps = {
+  taskInBox: [],
+};
+
+export default TodoList;

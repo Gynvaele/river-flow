@@ -1,0 +1,18 @@
+.tasks-col-hover {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: green;
+  //z-index: 3;
+}
+
+.tasks-col {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  //z-index: 1;
+}

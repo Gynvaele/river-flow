@@ -1,11 +1,6 @@
-import {
-  // SET_AUTH,
-  START_LOGIN,
-  OBTAIN_LOGIN_DATA,
-  OBTAIN_LOGIN_ERROR,
-  // OBTAIN_FINISH_DATA,
-  // START_FINISH_REGISTER,
-} from "../types";
+export const START_LOGIN = "START_LOGIN";
+export const OBTAIN_LOGIN_DATA = "OBTAIN_LOGIN_DATA";
+export const OBTAIN_LOGIN_ERROR = "OBTAIN_LOGIN_ERROR";
 
 function startLogin() {
   return {
