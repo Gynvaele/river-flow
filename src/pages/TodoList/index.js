@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import Task from "../../components/Todos/TodoTasks";
-import { NewTaskModal } from "../../components/CreateNewToDo/openModal";
+import { NewTaskModal } from "../../components/CreateNewToDo";
 import "./style.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { obtainTasks } from "../../redux/actions";
@@ -31,7 +31,7 @@ export const Index = () => {
         ))}
       </div>
       <div className={"modalWindow-container"}>
-        <NewTaskModal />
+        <NewTaskModal tasksLength={tasks.length} />
       </div>
     </div>
   );

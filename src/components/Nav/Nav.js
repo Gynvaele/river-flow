@@ -9,12 +9,12 @@ export const Nav = () => {
     <div id={"navigation"}>
       <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
         <Button>
-          <NavLink exact to={"/"} className={"navButton"}>
+          <NavLink exact to={"/singIn"} className={"navButton"}>
             SignIn page
           </NavLink>
         </Button>
         <Button>
-          <NavLink exact to={"/todos"} className={"navButton"}>
+          <NavLink exact to={"/"} className={"navButton"}>
             {"ToDo list."}
           </NavLink>
         </Button>

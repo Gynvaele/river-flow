@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { DeleteTask, obtainTasks } from "../../redux/actions";
+import React from "react";
+import { DeleteTask } from "../../redux/actions";
 import { Post } from "../DrugAndDrop/Post/Post";
 import { DropBox } from "../DrugAndDrop/DropBox/DropBox";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const TodoList = ({ currentBox, taskInBox }) => {
   const dispatch = useDispatch();
@@ -13,23 +13,19 @@ const TodoList = ({ currentBox, taskInBox }) => {
 
   return (
     <DropBox id={currentBox} className={"tasks-col"}>
-      {!taskInBox.length && (
+      {taskInBox.length === 0 && (
         <div className={"tasks"}>
-          <div className="title">You have no eny started tasks.</div>
+          <div className="title">{currentBox}</div>
         </div>
       )}
-      {taskInBox.length && (
+      {taskInBox.length > 0 && (
         <div className="tasks">
-          <div className={"title"}>New ToDos ({taskInBox.length}):</div>
+          <div className={"title"}>
+            {currentBox} ({taskInBox.length}):
+          </div>
           {taskInBox.map((elm, i) => {
             return (
-              <Post
-                key={"post_" + elm.title + i}
-                id={elm.id}
-                className={"posts"}
-                draggable={true}
-                // PinnedToWork={PinnedToWork}
-              >
+              <Post key={"post_" + elm.title + i} id={elm.id} className={"posts"} draggable={true}>
                 <div className="container">
                   <div className="post-title">{elm.title}</div>
                   <div className="post-content">

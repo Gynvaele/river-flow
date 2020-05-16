@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import "./style.scss";
 import { TextField } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import { login } from "../../redux/actions/loginActions";
-import connect from "react-redux/lib/connect/connect";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/actions";
 
-const SingIn = ({ isAuth, dispatch }) => {
+export const SingIn = ({ isAuth }) => {
   const [email, setLogin] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
 
   const Login = event => {
     event.preventDefault();
@@ -47,5 +48,3 @@ const SingIn = ({ isAuth, dispatch }) => {
     </div>
   );
 };
-
-export default connect(({ isAuth }) => ({ isAuth }))(SingIn);

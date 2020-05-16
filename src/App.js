@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 //components
 import { Index } from "./pages/TodoList";
-import SingIn from "./pages/SingIn/SingIn";
+import { SingIn } from "./pages/SingIn/SingIn";
 import { Nav } from "./components/Nav/Nav";
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
     <BrowserRouter>
       <Nav />
       <Switch>
-        {/*<Route exact path={"/"} render={() => <SingIn />} />*/}
+        <Route exact path={"/singIn"} render={() => <SingIn />} />
         <Route exact path={"/"} component={Index} />
       </Switch>
     </BrowserRouter>
