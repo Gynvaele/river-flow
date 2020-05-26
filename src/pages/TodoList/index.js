@@ -4,6 +4,7 @@ import { NewTaskModal } from "../../components/CreateNewToDo";
 import "./style.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { obtainTasks } from "../../redux/actions";
+import { AddTestAuthor } from "../../components/addTestAutor";
 
 export const Index = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ export const Index = () => {
 
   return (
     <div>
+      <AddTestAuthor />
       <div className={"tasks-container"}>
         {dashes.map(dash => (
           <Task key={dash} currentBox={dash} taskInBox={taskForDashes[dash]} />

@@ -45,7 +45,7 @@ export const NewTaskModal = () => {
 
   const [title, setTitle] = useState("");
   const [fullText, setFullText] = useState("");
-  const [contributor, setContributor] = useState("");
+  const [performer, setPerformer] = useState("");
 
   const handleOpen = () => {
     setOpen(true);
@@ -62,7 +62,7 @@ export const NewTaskModal = () => {
     if (title.length > 1 || fullText.length > 1) {
       const post = {
         id: id,
-        contributor: contributor,
+        performer: performer,
         title: title,
         fullText: fullText,
         flag: "todoTasks",
@@ -76,7 +76,7 @@ export const NewTaskModal = () => {
   };
 
   const handleChange = event => {
-    setContributor(event.target.value);
+    setPerformer(event.target.value);
   };
   return (
     <div>
@@ -110,10 +110,10 @@ export const NewTaskModal = () => {
                 type="text"
                 onChange={e => setFullText(e.target.value)}
               />
-              <TextField select label="Contributor" value={contributor} onChange={handleChange}>
+              <TextField select label="performer" value={performer} onChange={handleChange}>
                 {/*Add select for developers*/}
                 {/*{devs.map((elm, i) => (*/}
-                {/*  <MenuItem value={elm.contributor} key={"contributor" + i}>{elm.contributor}</MenuItem>*/}
+                {/*  <MenuItem value={elm.performer} key={"performer" + i}>{elm.performer}</MenuItem>*/}
                 {/*))}*/}
 
                 {/*Пока что заглушка*/}
